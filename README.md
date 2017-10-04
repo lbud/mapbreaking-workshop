@@ -1,4 +1,20 @@
-# Welcome!
+# Learning WebGL by breaking stuff
+**A workshop for doing reckless things with maps**
+
+### [Lauren Budorick](https://github.com/lbud) & [Anjana Vakil](https://github.com/vakila), [Mapbox](https://github.com/mapbox) 
+### [WebCamp Zagreb 2017](https://2017.webcampzg.org/workshops/learning-webgl-by-breaking-stuff/)
+
+## Description
+
+In this workshop we'll try to wrap our heads around some basic concepts of WebGL, an open-source library for 3D web graphics based on the OpenGL project. But instead of working through safe, boring tutorial examples, we'll live dangerously and do it the fun way: by breaking things! We'll get our hands dirty by cloning and exploring, then tweaking and breaking a mature WebGL-based project: Mapbox GL JS, an open source library for rendering 3D, interactive maps in the browser. By messing with its internals, we'll create some crazy maps that are very bad for getting around town, but very good for building intuitions about how WebGL works its magic.
+
+## Setup instructions
+
+* [Create a free Mapbox account](https://www.mapbox.com/signup/) if you don’t yet have one 
+* Follow the [mapbox-gl-js setup instructions](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#preparing-your-development-environment) specific to your operating system
+* [Start up the debug server](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#serving-the-debug-page) using the [access token](https://www.mapbox.com/studio/account/tokens/) for your Mapbox account
+
+## Links
 
 * [Diff showing extra annotations](https://github.com/mapbox/mapbox-gl-js/commit/0ab948b27712a178c297d13ea0d27cff1aab8df2)
 * [mapbox-gl-js directory guide](./mbgl_directory_guide.txt)
