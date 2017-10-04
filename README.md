@@ -33,7 +33,7 @@ In this workshop we'll try to wrap our heads around some basic concepts of WebGL
 
     <details>
     <summary><em>Answer:</em></summary>
-    When we comment out the first line, we’re removing one out of every two triangles that make up the “walls” of a 3D extrusion (remember, we create a triangle by adding the indices of its vertices in the vertex array to the index array), so in our map, every wall will have only one lower triangle.
+    When we comment out the first line, we’re removing one out of every two triangles that make up the “walls” of a 3D extrusion (remember, we create a triangle by adding the indices of its vertices in the vertex array to the index array), so in our map, every wall will have only one lower triangle. If we wanted to make the roofs look jagged, we would need to skip every other triangle added [here](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/data/bucket/fill_extrusion_bucket.js#L204-L209) — so, say, increment by 6 instead of 3 (being careful not to jump out of bounds).
     </details>
 
 * In `src/data/bucket/circle_bucket.js` (use [http://localhost:9966/debug/circles.html](http://localhost:9966/debug/circles.html)), [here](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/data/bucket/circle_bucket.js#L145-L146) we add two triangles. What if we changed which indices we made the triangles out of? Change the first line to add triangles at index 0-2-3, then the second to add triangle 0-3-1. Can we explain this? Using [this diagram](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/data/bucket/circle_bucket.js#L131-L135) as a guide, how would you flip the pacman in the opposite direction?
