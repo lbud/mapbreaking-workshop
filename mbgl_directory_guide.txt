@@ -1,0 +1,53 @@
+src/
+    data/
+        bucket/
+            circle_bucket.js                    creates vertices and triangles for circles
+            fill_bucket.js                      creates vertices and triangles for fills
+            fill_extrusion_bucket.js            creates vertices and triangles for fill-extrusions
+            line_bucket.js                      creates vertices and triangles for lines
+            symbol_bucket.js                    creates vertices and triangles for symbols (text, icons)
+    geo/
+    gl/
+    render/
+        draw_background.js                      sets up background drawing
+        draw_circle.js                          sets up circle drawing
+        draw_fill.js                            sets up fill drawing
+        draw_fill_extrusion.js                  sets up fill-extrusion drawing
+        draw_line.js                            sets up line drawing
+        draw_raster.js                          sets up raster (e.g. satellite) drawing
+        draw_symbol.js                          sets up symbol (text or icon) drawing
+    shaders/
+        circle.fragment.glsl                    renders circles
+        circle.vertex.glsl
+        extrusion_texture.fragment.glsl         copies full offscreen-rendered texture of extrusions back to the map
+        extrusion_texture.vertex.glsl
+        fill.fragment.glsl                      renders fills
+        fill.vertex.glsl
+        fill_extrusion.fragment.glsl            renders solid 3D extrusions (note: rendered to offscreen texture and copied back with extrusion_texture shaders)
+        fill_extrusion.vertex.glsl
+        fill_extrusion_pattern.fragment.glsl    renders 3D extrusions with patterns
+        fill_extrusion_pattern.vertex.glsl
+        fill_outline.fragment.glsl              renders outlines of fills
+        fill_outline.vertex.glsl
+        fill_outline_pattern.fragment.glsl      renders patterned outlines of fills
+        fill_outline_pattern.vertex.glsl
+        fill_pattern.fragment.glsl              renders patterned fills
+        fill_pattern.vertex.glsl
+        line.fragment.glsl                      renders lines
+        line.vertex.glsl
+        line_pattern.fragment.glsl              renders patterned lines
+        line_pattern.vertex.glsl
+        line_sdf.fragment.glsl                  renders dashed lines
+        line_sdf.vertex.glsl
+        raster.fragment.glsl                    renders raster layers, like satellite maps
+        raster.vertex.glsl
+        symbol_icon.fragment.glsl               renders PNG-based symbols
+        symbol_icon.vertex.glsl
+        symbol_sdf.fragment.glsl                renders SDF-based symbols, including text
+        symbol_sdf.vertex.glsl
+    source/
+    style/
+    style-spec/
+    symbol/
+    ui/
+    util/
