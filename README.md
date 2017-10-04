@@ -14,13 +14,8 @@ In this workshop we'll try to wrap our heads around some basic concepts of WebGL
 * Follow the [mapbox-gl-js setup instructions](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#preparing-your-development-environment) specific to your operating system
 * [Start up the debug server](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#serving-the-debug-page) using the [access token](https://www.mapbox.com/studio/account/tokens/) for your Mapbox account
 
-## Links
 
-* [Diff showing extra annotations](https://github.com/mapbox/mapbox-gl-js/commit/0ab948b27712a178c297d13ea0d27cff1aab8df2)
-* [mapbox-gl-js directory guide :book:](./mbgl_directory_guide.txt)
-* [Worksheet :hammer_and_pick:](./worksheet.md)
-
-# Walkthrough examples
+## Walkthrough examples
 
 * In `src/data/bucket/fill_bucket.js` (use [http://localhost:9966/debug/index.html](http://localhost:9966/debug/index.html)), modify [this line](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/data/bucket/fill_bucket.js#L142) to add a random integer between 0 and 8192 instead of the x or y coordinate (or try both). Can we explain what this does? (Try zooming to the Croatian islands maybe, where there are lots of interesting polygons with good background contrast color). Zoom in and out; when and why does it change at intervals?
 
@@ -43,14 +38,23 @@ In this workshop we'll try to wrap our heads around some basic concepts of WebGL
     We’re still using all the same vertices — which basically make up a square (in the fragment shader we shave off the corners to make it round) — but connecting them wrong. Instead of constructing a lower right and an upper left, we’re now constructing an upper left triangle and a lower left triangle, leaving a slice of the circle unaccounted for. If you wanted to flip the pacman, you could use triangles 0-1-2 and 1-2-3 (note those numbers don’t need to be in order).
     </details>
 
-* Text is rendered using a method called [“signed distance fields (SDFs),”](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817) which are essentially rasterized single-channel representations of glyphs, where the value of a given pixel within a glyph is higher the more “inside” the glyph it is, and lower the further outside the glyph it is. We use this value to determine the opacity of a pixel within a glyph “quad” (rectangle) when we sample the SDF raster [here](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/shaders/symbol_sdf.fragment.glsl#L420. If you invert the alpha value [here](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/shaders/symbol_sdf.fragment.glsl#L47) (alpha range is [0, 1]), how does this affect rendering?
+* Text is rendered using a method called [“signed distance fields (SDFs),”](https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817) which are essentially rasterized single-channel representations of glyphs, where the value of a given pixel within a glyph is higher the more “inside” the glyph it is, and lower the further outside the glyph it is. We use this value to determine the opacity of a pixel within a glyph “quad” (rectangle) when we sample the SDF raster [here](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/shaders/symbol_sdf.fragment.glsl#L420). If you invert the alpha value [here](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/shaders/symbol_sdf.fragment.glsl#L47) (alpha range is [0, 1]), how does this affect rendering?
 
     <details>
     <summary><em>Answer:</em></summary>
     This will invert text rendering, creating a knockout effect. Note how throughout the fragment shader `color` is generally static: we’re actually filling in the entire quad with that same rgb value, and the visibility of any given pixel depends only on its opacity.
     </details>
 
+## [Worksheet :hammer_and_pick: - Mapbreaking Scavenger Hunt](./worksheet.md)
+
+This worksheet has some ideas for other exercises you can do on your own. You can fork this repository & fill out the worksheet yourself as you go - feel free to add your own notes & items!
+
+
 ## Helpful hints
+
+* [Annotations explaining some important mapbox-gl-js functions :pencil:](https://github.com/mapbox/mapbox-gl-js/commit/0ab948b27712a178c297d13ea0d27cff1aab8df2)
+* [mapbox-gl-js directory guide :book:](./mbgl_directory_guide.txt)
+
 
 * You’ll see `.emplaceBack` in a lot of the bucket types — think of this as being the same as an array `.push`.
 * GLSL is especially type-strict, so doing operations with different number types (e.g. adding a `float` and an `int`) is not allowed. Most numbers in these shaders are `float`s, so usually if you want to e.g. divide a number by 2, it’ll need to be `myNum / 2.0`.
