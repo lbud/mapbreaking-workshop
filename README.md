@@ -15,7 +15,7 @@ In this workshop we'll try to wrap our heads around some basic concepts of WebGL
 * [Start up the debug server](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#serving-the-debug-page) using the [access token](https://www.mapbox.com/studio/account/tokens/) for your Mapbox account
 
 
-# Walkthrough examples
+## Walkthrough examples
 
 * In `src/data/bucket/fill_bucket.js` (use [http://localhost:9966/debug/index.html](http://localhost:9966/debug/index.html)), modify [this line](https://github.com/mapbox/mapbox-gl-js/blob/78a685240f07c4af6ece224ebd46022e8e60ce1a/src/data/bucket/fill_bucket.js#L142) to add a random integer between 0 and 8192 instead of the x or y coordinate (or try both). Can we explain what this does? (Try zooming to the Croatian islands maybe, where there are lots of interesting polygons with good background contrast color). Zoom in and out; when and why does it change at intervals?
 
