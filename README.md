@@ -8,6 +8,16 @@
 
 In this workshop we'll try to wrap our heads around some basic concepts of WebGL, an open-source library for 3D web graphics based on the OpenGL project. But instead of working through safe, boring tutorial examples, we'll live dangerously and do it the fun way: by breaking things! We'll get our hands dirty by cloning and exploring, then tweaking and breaking a mature WebGL-based project: Mapbox GL JS, an open source library for rendering 3D, interactive maps in the browser. By messing with its internals, we'll create some crazy maps that are very bad for getting around town, but very good for building intuitions about how WebGL works its magic.
 
+## Agenda
+
+* (Before the workshop begins: set up development environment per instructions below)
+* 9:00-9:30 Introductions, Overview of (map) rendering
+* 9:30-10:30 Walk through some examples together
+* 10:30-10:45 Break :coffee:
+* 10:45-12:30 Mapbreaking time!
+* 12:30-13:00 Show & tell 
+
+
 ## Setup instructions
 
 * [Create a free Mapbox account](https://www.mapbox.com/signup/) if you don’t yet have one
