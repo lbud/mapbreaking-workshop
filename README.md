@@ -22,7 +22,14 @@ In this workshop we'll try to wrap our heads around some basic concepts of WebGL
 
 * [Create a free Mapbox account](https://www.mapbox.com/signup/) if you don’t yet have one
 * Follow the [mapbox-gl-js setup instructions](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#preparing-your-development-environment) specific to your operating system
-* [Start up the debug server](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#serving-the-debug-page) using the [access token](https://www.mapbox.com/studio/account/tokens/) for your Mapbox account
+* In the ``mapbox-gl-js`` repository, switch to the ``lbud-annotated`` branch (a special branch Lauren has made for the workshop, with some additional comments and files):
+  ```
+  git checkout lbud-annotated
+  ```
+* [Start up the debug server](https://github.com/mapbox/mapbox-gl-js/blob/master/CONTRIBUTING.md#serving-the-debug-page) using the [access token](https://www.mapbox.com/studio/account/tokens/) for your Mapbox account:
+  ```
+  MAPBOX_ACCESS_TOKEN=123.your.token.here.456 yarn run start-debug
+  ```
 
 
 ## Walkthrough examples
